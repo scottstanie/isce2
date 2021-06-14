@@ -66,7 +66,7 @@ OUTPUT = Component.Parameter(
 POLARIZATION = Component.Parameter(
     "polarization",
     public_name="POLARIZATION",
-    default="HH",
+    default="VV",
     type=str,
     mandatory=True,
     intent="input",
@@ -83,7 +83,7 @@ class UAVSAR_Polsar(Sensor):
     logging_name = "isce.Sensor.UAVSAR_Polsar"
     lookMap = {"RIGHT": -1, "LEFT": 1}
 
-    parameter_list = (METADATAFILE,) + Sensor.parameter_list
+    parameter_list = (METADATAFILE, POLARIZATION) + Sensor.parameter_list
 
     def __init__(self, name=""):
         super().__init__(family=self.family, name=name)
