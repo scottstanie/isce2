@@ -36,6 +36,7 @@
 
 import isce
 from ctypes import cdll
+import subprocess
 import os
 import sys
 import urllib.request, urllib.error, urllib.parse
@@ -158,12 +159,12 @@ class DemStitcher(DS):
                         # curl with -O download in working dir, so save current, move to donwloadDir
                         # nd get back once download is finished
                         cwd = os.getcwd()
-                        os.chdir(downloadDir)
-                        print(command)
-                        if os.system(command):
+                        try:
+                            os.chdir(downloadDir)
+                            subprocess.check_call(command, shell=True)
+                        finally:
                             os.chdir(cwd)
-                            raise Exception
-                        os.chdir(cwd)
+
                 self._downloadReport[fileNow] = self._succeded
             except Exception as e:
                 self.logger.warning('There was a problem in retrieving the file  %s. Exception %s'%(os.path.join(url,fileNow),str(e)))
