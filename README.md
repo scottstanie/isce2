@@ -81,10 +81,9 @@ you want to try the unwrap 2 stage option:
 
 * RelaxIV (a minimum cost flow relaxation algorithm coded in C++ by
 Antonio Frangioni and Claudio Gentile at the University of Pisa,
-based on the Fortran code developed by by Dimitri Bertsekas while
-at MIT) available by request at http://www.di.unipi.it/~frangio.
-So that ISCE will compile it properly, the RelaxIV files should
-be placed in the directory: 'contrib/UnwrapComp/src/RelaxIV'.
+based on the Fortran code developed by Dimitri Bertsekas while
+at MIT) is available at https://github.com/frangio68/Min-Cost-Flow-Class.
+The RelaxIV files should be placed in the directory: 'contrib/UnwrapComp/src/RelaxIV' so that ISCE will compile it properly.
 
 * PULP: Use easy\_install or pip to install it or else clone it from,
 https://github.com/coin-or/pulp.  Make sure the path to the installed
@@ -294,7 +293,7 @@ run the following command while in the top directory of the ISCE source (the
 directory containing the SConstruct file):
 
 ```bash
-> rm -rf config.log .sconfig.dblite .sconf_temp
+> rm -rf config.log .sconfig.dblite .sconf_temp .sconsign.dblite
 ```
 
 and then try "scons install" again.
@@ -875,14 +874,7 @@ Filename: reference\_offset1.xml:
 
 ## User community forums
 
-Sign up to participate in the ISCE user communities at the following website:
+Read helpful information and participate in discussion with
+the user/developer community on GitHub Discussions:
 
-[http://earthdef.caltech.edu/account/register](http://earthdef.caltech.edu/account/register)
-
-
-After you sign up read helpful information and participate in discussion with
-the user/developer community at the following website:
-
-[http://earthdef.caltech.edu/projects/isce_forum/boards](http://earthdef.caltech.edu/projects/isce_forum/boards)
-
-
+https://github.com/isce-framework/isce2/discussions
